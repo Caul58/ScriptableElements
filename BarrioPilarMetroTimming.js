@@ -10,4 +10,8 @@ let fmLocal = FileManager.local();
 
 eval(fmLocal.readString(libraryPath));
 
-metroTiming("902");
+let completionCallback = function(text){
+    Speech.speak(text)
+}
+
+metroTiming("902", false, completionCallback);
