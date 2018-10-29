@@ -4,6 +4,7 @@
 var metroTiming = async function (station, presentUI, callback) {
 
   let req = new Request("https://serviciosapp.metromadrid.es/servicios/rest/teleindicadores/" + station + "?")
+  req.headers = {"Accept": "application/json"}
   let json = await req.loadJSON()
 
   let array = json["Vtelindicadores"]
@@ -43,4 +44,3 @@ var metroTiming = async function (station, presentUI, callback) {
   callback(speaksText)
 
 };
-
